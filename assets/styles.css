@@ -1531,3 +1531,254 @@ body.app-body {
   .board { grid-template-columns: 1fr 1fr; }
   .pipeline-board { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 900px) {
+  /* ── Index nav ── */
+  .nav-inner {
+    padding: 12px 20px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .nav-links {
+    gap: 2px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    flex-wrap: nowrap;
+  }
+  .nav-link {
+    padding: 8px 10px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .nav-cta { display: none; }
+
+  /* ── Index layout containers ── */
+  .hero {
+    padding: 40px 20px 60px;
+    min-height: auto;
+  }
+  .hero-inner,
+  .section-inner,
+  .footer-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section { padding: 60px 20px; }
+  .section.tight { padding: 44px 20px; }
+  .cta-band { padding: 56px 20px; }
+
+  /* ── Hero aside: hide photo on tablet, keep stat cards ── */
+  .hero-aside > div:first-child { display: none; }
+
+  .display-xl { font-size: clamp(42px, 13vw, 64px); }
+  .display-l  { font-size: clamp(34px, 10vw, 48px); }
+  .body-l     { font-size: 16px; }
+
+  /* ── Brand strip ── */
+  .brand-strip-inner {
+    padding: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* ── Problem silos: already 2-col at 1024, keep at 900 ── */
+
+  /* ── Footer ── */
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+  .site-footer { padding: 48px 20px 28px; }
+
+  .app-top {
+    height: auto;
+    position: static;
+  }
+  .app-top-inner {
+    grid-template-columns: 1fr auto;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  .app-brand-context,
+  .app-brand-divider,
+  .app-search-shortcut,
+  .app-profile > div:not(.app-avatar) {
+    display: none;
+  }
+  .app-search {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    max-width: none;
+  }
+  .app-top-right {
+    gap: 0;
+  }
+
+  .app-main {
+    padding: 22px 16px 48px;
+    min-height: auto;
+  }
+  .app-page-head {
+    align-items: start;
+    margin-bottom: 18px;
+  }
+  .app-page-title {
+    font-size: 28px;
+  }
+  .app-page-actions {
+    width: 100%;
+  }
+  .app-page-actions .btn {
+    flex: 1 1 140px;
+  }
+
+  .app-main > section[style*="grid-template-columns"],
+  .app-main > section > div[style*="grid-template-columns"],
+  .panel-body[style*="grid-template-columns"],
+  div[style*="grid-template-columns: 1.15fr 1fr"],
+  div[style*="grid-template-columns: 1fr 1fr"],
+  div[style*="grid-template-columns: 1.1fr 1fr"],
+  div[style*="grid-template-columns: repeat(3"],
+  div[style*="grid-template-columns: repeat(4"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stats-row,
+  .kpi-strip,
+  .board,
+  .ticket-grid,
+  .pipeline-board {
+    grid-template-columns: 1fr !important;
+  }
+  .stat-cell,
+  .kpi-cell,
+  .ticket-cell {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .stat-cell:last-child,
+  .kpi-cell:last-child,
+  .ticket-cell:last-child {
+    border-bottom: none;
+  }
+  .board-col {
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .board-col:last-child {
+    border-bottom: none;
+  }
+
+  .filter-bar {
+    align-items: stretch;
+  }
+  .filter-search {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+  }
+  .filter-bar-divider {
+    display: none;
+  }
+
+  .panel {
+    overflow-x: auto;
+  }
+  .data-table {
+    min-width: 760px;
+  }
+
+  .bike-row {
+    grid-template-columns: 44px 1fr;
+  }
+  .bike-status {
+    grid-column: 1 / -1;
+    text-align: left;
+    min-width: 0;
+  }
+  .queue-row {
+    grid-template-columns: auto 1fr;
+  }
+  .queue-action {
+    grid-column: 2;
+    justify-self: start;
+  }
+  .inbox-item {
+    grid-template-columns: 28px 1fr;
+  }
+  .inbox-time {
+    grid-column: 2;
+  }
+  .email-foot {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .compose-select {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  /* ── Index nav ── */
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+    gap: 8px;
+  }
+  .nav-links { width: 100%; }
+
+  /* ── Index sections ── */
+  .hero         { padding: 32px 16px 48px; }
+  .section      { padding: 48px 16px; }
+  .section.tight { padding: 36px 16px; }
+  .cta-band     { padding: 48px 16px; }
+  .site-footer  { padding: 40px 16px 24px; }
+
+  .display-xl {
+    font-size: clamp(32px, 11vw, 42px);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+  }
+  .display-l  { font-size: clamp(26px, 10vw, 36px); }
+  .display-m  { font-size: clamp(22px, 8vw, 30px); }
+  .body-l     { font-size: 15.5px; }
+
+  /* ── Brand strip: single col ── */
+  .brand-strip-inner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  /* ── Silos + features: single col ── */
+  .silos    { grid-template-columns: 1fr; }
+  .features { grid-template-columns: 1fr; }
+  .silo, .feature { padding: 24px 20px; }
+  .section-head { margin-bottom: 36px; }
+
+  /* ── CTA ── */
+  .cta-band h2 { font-size: clamp(26px, 9vw, 38px); }
+  .cta-actions { flex-direction: column; }
+
+  /* ── Footer ── */
+  .footer-top   { grid-template-columns: 1fr; gap: 24px; }
+  .footer-bottom { flex-direction: column; gap: 6px; }
+
+  /* ── Buttons: full width on phone ── */
+  .btn { width: 100%; white-space: normal; justify-content: center; }
+
+  /* ── App pages ── */
+  .app-brand-name  { font-size: 14px; }
+  .app-avatar      { width: 28px; height: 28px; font-size: 11px; }
+  .app-icon-btn    { width: 32px; height: 32px; }
+  .app-main        { padding: 18px 12px 40px; }
+  .app-page-title  { font-size: 24px; }
+  .app-page-context { font-size: 13px; }
+  .stat-cell, .kpi-cell, .panel-body, .panel-head { padding: 16px; }
+  .stat-num        { font-size: 28px; }
+  .board-card, .pipeline-card { padding: 12px; }
+  .data-table      { min-width: 680px; }
+  .demo-banner     { display: none; }
+}
